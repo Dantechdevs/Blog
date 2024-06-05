@@ -25,6 +25,7 @@ Route::group(['prefix' => 'posts' , 'as' => 'posts.'],function(){
     Route::post( '/' , [PostController::class, 'store'])->name('store');
     Route::get( '{post:slug}/edit' , [PostController::class, 'edit'])->name('edit');
     Route::get( '{post:slug}' , [PostController::class, 'update'])->name('update');
+    Route::get( '{post:slug}' , [PostController::class, 'show'])->name('show');
     Route::get( '{post:slug}/delete' , [PostController::class, 'destroy'])->name('delete');
 
 });
