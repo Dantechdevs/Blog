@@ -15,7 +15,7 @@ class Post extends Model
 
     public function user():BelongsTo
     {
-        return $this->belongsTo(user::class)->withDefault('Admin User');
+        return $this->belongsTo(user::class, 'author_id')->withDefault('Admin User');
     }
 
     public function category():BelongsTo
