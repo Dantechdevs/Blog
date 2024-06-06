@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('meta_description')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->boolean('featured')->default(0);
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('author_id')->constrained('users');
             $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
 
             $table->timestamps();
