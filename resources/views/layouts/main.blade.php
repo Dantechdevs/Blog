@@ -3,7 +3,12 @@
     <head>
 
         <x-partials.head />
-
+        
+        <style>
+            .gradient {
+              background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+            }
+          </style>
 
     </head>
     <body class="leading-normal tracking-normal text-white gradient">
