@@ -13,7 +13,9 @@ Route::group(['middleware' => ['auth'] , 'prefix' => 'dashboard'], function() {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
     });
     //Categories
-    Route::resource('categories', CategoryController::class);
+    Route::group(['prefix' => 'categories', 'as' => 'categories.'], function(){
+    Route::get('/',[CategoryController::class, 'index'])->name('index');
+    });
 });
 Route::middleware([
     'auth:sanctum',config('jetstream.auth_session'),'verified',])->group(function () {
