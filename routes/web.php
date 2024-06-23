@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => ['auth'] , 'prefix' => 'dashboard'], function() {
     //Dashboard
-    Route::group(['prefix' => '', 'as' => 'dashboard'], function() {
+    Route::group(['prefix' => '', 'as' => 'dashboard.'], function() {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
     });
     //Categories
